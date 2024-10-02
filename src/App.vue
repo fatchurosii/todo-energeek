@@ -58,8 +58,8 @@
                   </div>
                   <div class="p-5 border rounded bg-slate-200 border-slate-300" id="mytodo">
                     <h1 class="text-lg font-semibold text-dark font-body">{{todo == 1 ? 'mytodolist:' : 'myprogresslist:'}}</h1>
-                    <template v-for="task in tasks" :key="task.id">
-                      <h1 class="text-lg font-semibold text-dark font-body">{{task.id}}. {{task.projectName}} - {{task.taskName}}</h1>
+                    <template v-for="(task , index) in tasks" :key="index">
+                      <h1 class="text-lg font-semibold text-dark font-body">{{index+1}}. {{task.projectName}} - {{task.taskName}}</h1>
                     </template>
                   </div>
                 </div>
@@ -148,14 +148,14 @@
                   <div class="p-5 border rounded bg-slate-200 border-slate-300" id="myUpdate">
                     <div class="mb-3">
                       <h1 class="text-lg font-semibold text-dark font-body">myprogresslist: </h1>
-                      <template v-for="updateTask in updateTasks" :key="updateTask.id">
-                        <h1 class="text-lg font-semibold text-dark font-body">{{updateTask.id}}. {{updateTask.projectName}} - {{updateTask.taskName}}</h1>
+                      <template v-for="(updateTask, index) in updateTasks" :key="index">
+                        <h1 class="text-lg font-semibold text-dark font-body">{{index + 1}}. {{updateTask.projectName}} - {{updateTask.taskName}}</h1>
                       </template>
                     </div>
                     <div class="mb-3">
                       <h1 class="text-lg font-semibold text-dark font-body">todo next: </h1>
-                      <template v-for="nextTask in nextTasks" :key="nextTask.id">
-                        <h1 class="text-lg font-semibold text-dark font-body">{{nextTask.id}}. {{nextTask.projectName}} - {{nextTask.taskName}}</h1>
+                      <template v-for="(nextTask, index) in nextTasks" :key="index">
+                        <h1 class="text-lg font-semibold text-dark font-body">{{index + 1}}. {{nextTask.projectName}} - {{nextTask.taskName}}</h1>
                       </template>
                     </div>
                   </div>

@@ -200,8 +200,12 @@ import {useToast} from 'vue-toastification'
    })
  }
  const deleteTask = (id) => {
-   tasks.value = tasks.value.filter((task) => task.id !== id)
- }
+  const index = tasks.value.findIndex(task => task.id === id);
+  if (index !== -1) {
+    tasks.value.splice(index, 1); // Removes the task at the found index
+  }
+};
+
  const addUpdateTask = () => {
   updateTasks.value.push({
      id : updateTasks.value.length + 1,
@@ -210,7 +214,10 @@ import {useToast} from 'vue-toastification'
    })
  }
  const deleteUpdateTask = (id) => {
-  updateTasks.value = updateTasks.value.filter((updateTasks) => updateTasks.id !== id)
+  const index = updateTasks.value.findIndex(updateTask => updateTask.id === id);
+  if (index !== -1) {
+    updateTasks.value.splice(index, 1); 
+  }
  }
  const addNextTask = () => {
   nextTasks.value.push({
@@ -220,7 +227,10 @@ import {useToast} from 'vue-toastification'
    })
  }
  const deleteNextTask = (id) => {
-  nextTasks.value = nextTasks.value.filter((nextTasks) => nextTasks.id !== id)
+  const index = nextTasks.value.findIndex(nextTask => nextTask.id === id);
+  if (index !== -1) {
+    nextTasks.value.splice(index, 1); 
+  }
  }
  const copyToClipboardUpdate = () => {
   const mytodoElement = document.getElementById('myUpdate');

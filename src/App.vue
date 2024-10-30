@@ -11,7 +11,7 @@
               <h1 class="text-lg font-semibold text-dark">{{todo == 1 ? 'Todo' : 'Update Progress'}}</h1>
             </div>
             <div>
-              <button class="px-8 py-2 text-white bg-indigo-600 rounded-md " type="button" @click="switchBtn">Update Progress</button>
+              <button class="px-8 py-2 text-white bg-indigo-600 rounded-md " type="button" @click="switchBtn">{{todo == 1 ? 'Todo' : 'Update Progress'}}</button>
             </div>
           </div>
           <!-- <div class="grid grid-flow-col gap-5"> -->
